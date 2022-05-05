@@ -1,4 +1,4 @@
-# Xây đựng web quẩn lý học viên 
+# Xây đựng web quản lý học viên 
 ## Các kiến thức sử dụng
 1. HTML/DOM/BOM
 2. CSS
