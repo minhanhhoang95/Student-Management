@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/codegym.jpg" />
+
+</head>
+
+<body>
+    <img src="img/loagocodegym.jpg" id="logo">
+    <h1> QUẢN LÝ HỌC VIÊN </h1>
+
+    
+        <div class="search">
+            <div class="search1"><input id="keyword" style="width: 300px;" oninput="search()" type="Search"></div>
+
+        </div>
+ 
+    <div class="container">
+
+        <div class="row">
+
+            <table class="table" id="table">
+                <tr>
+                    <th style="font-size: 40px  " colspan="7" class="table-th">Danh sách học viên</th>
+                </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Lớp</th>
+                    <th>Ảnh</th>
+                    <th>Tùy chọn</th>
+
+                </tr>
+                <tbody id="list-student">
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr> -->
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="row">
+            <table id="table1">
+                <tbody class="table1-tbody">
+                    <tr id="id1">
+                        <th colspan="2"> Thông tin học viên</th>
+                    </tr>
+
+                    <!-- <tr>
+                        <th>ID</th>
+                        <td class="id"><input type="number" id="id"></td>
+
+                    </tr> -->
+                    <tr>
+                        <th>Họ tên</th>
+                        <td class="id"><input type="text" id="fullname"></td>
+                    </tr>
+                    <tr>
+                        <th>Ngày sinh</th>
+                        <td class="id"><input type="text" id="date"></td>
+                    </tr>
+                    <tr>
+                        <th>Giới tính</th>
+                        <td class="id"><input type="text" id="gender"></td>
+                    </tr>
+                    <tr>
+                        <th>Lớp</th>
+                        <td class="id"><input type="text" id="grade"></td>
+                    </tr>
+                    <tr>
+                        <th>Ảnh</th>
+                        <td class="id"><input type="url" id="img"></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td class="id">
+                            <button style="background-color: limegreen" id="add" class="btn"
+                                onclick="addStudent()">Add</button>
+                            <button style="background-color: gold" id="edit" class="btn"
+                                onclick="resetStudent()">Reset</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

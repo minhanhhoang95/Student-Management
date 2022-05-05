@@ -1,0 +1,102 @@
+#logo {
+    width: 100%;
+    height: 130px;
+}
+
+.table {
+    border: 1px solid black;
+    width: 700px;
+    float: right;
+    border-collapse: collapse;
+}
+
+#table1 {
+    border: 1px solid black;
+    width: 500px;
+    height: 300px;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+    /* width: 100%; */
+}
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search1 {
+    margin: 5px 0px;
+    padding: 5px;
+}
+
+.id,
+#table1>tbody>tr>th {
+    border: 1px solid #333;
+}
+
+#id1 {
+    text-align: center;
+    font-size: 25px;
+    background-color: rgb(85, 248, 98);
+    color: brown;
+
+}
+
+.img-change {
+    width: 85px;
+    height: 85px;
+}
+
+.img-change:hover {
+    transform: scale(1.2);
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    background-color: rgb(135, 250, 145);
+    margin: 0;
+}
+
+.table-th {
+    background-color: rgb(135, 250, 145);
+}
+
+th,
+td {
+    text-align: center;
+}
+
+.form-control-md {
+    width: auto;
+}
+
+.tr-1 {
+    width: auto;
+    height: 85px;
+}
+
+.d-none {
+    display: none;
+}
+
+.tr-1:nth-child(odd) {
+    background-color: #87fa91a1;
+}
+
+
+.tr-1:nth-child(even) {
+    background-color: #87fa9142;
+}
+
+.table1-tbody {
+    background-color: #87fa91a1;
+}
+
+
+
+
+
+
