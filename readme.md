@@ -10,5 +10,5 @@
 + deloy site sử dụng github
 ## Sản phẩm
 1. link git : https://github.com/minhanhhoang95/Student-Management
-2. link sản phẩm :
+2. link sản phẩm : https://minhanhhoang95.github.io/Student-Management/
 
