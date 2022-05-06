@@ -19,16 +19,16 @@
 .search {
     display: flex;
     justify-content: flex-end;
-    /* width: 100%; */
+    position: relative;
 }
-.pagination{
-    display: flex;
-    justify-content: flex-end;
-}
+
 
 .search1 {
     margin: 5px 0px;
     padding: 5px;
+    /* margin-bottom: 10px; */
+    position: absolute;
+    /* right: 0px; */
 }
 
 .id,
@@ -94,9 +94,41 @@ td {
 .table1-tbody {
     background-color: #87fa91a1;
 }
+.pagination-row{
+    text-align: right;
+    margin-top: 45px;
+}
 
+.pagination>ul {
+    list-style: none;
+    margin-top: 30px;
+}
 
+.pagination>ul>li {
+    display: inline-block;
+}
 
+.pagination>ul>li>button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 4px;
+}
 
+.pagination>ul>li>button:hover {
+    background-color: #515253;
+    color: #EFEFEF;
+}
 
+.active>button {
+    background-color: #777a7e;
+    color: #EFEFEF;
+}
 
+@media (min-width: 600px) {
+    .btn {
+        margin-bottom: 3px;
+    }
+}

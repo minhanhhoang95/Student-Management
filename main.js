@@ -15,15 +15,18 @@ var students = [
 
 ];
 const key_data = "student_data";
+const pagesize = 5;
+const defaultpagenumber = 1;
+
 
 // render học viên
-/**
- * Param: listStudents
- */
-function renderStudents(listStudents) {
+
+function renderStudents(data, pagenumber) {
 
     let student = document.getElementById("list-student");
-    let htmls = listStudents.map(function (std, index) {
+    let pages = data.slice((pagenumber - 1) * pagesize, pagenumber * pagesize)
+// console.log(pages);
+      let htmls = pages.map(function (std) {
         return `
         <tr id="tr_${std.studentId}" class="tr-1">
                         <td>${std.studentId}</td>
@@ -44,6 +47,16 @@ function renderStudents(listStudents) {
 
     student.innerHTML = htmls.join("");
     setData(key_data, students);
+}
+
+//render phân trang
+function renderPagination(pagazise, pagenumber) {
+    let totalpage = Math.ceil(students.length / pagazise);
+    let pagination = document.querySelector(".pagination>ul");
+    pagination.innerHTML = "";
+    for (let i = 1; i <= totalpage; i++) {
+        pagination.innerHTML += `<li class="page-item ${pagenumber == i ? 'active' : ''}"><button onclick='paging(${i})'>${i}</button></li>`
+    }
 }
 
 // thêm học viên
@@ -68,13 +81,16 @@ function addStudent() {
     let newStudent = new Student(id, name, date, gender, grade, img)
     students.push(newStudent);
     setData(key_data, students);
-    renderStudents(students);
+    renderStudents(students,defaultpagenumber);
+    renderPagination(pagesize,defaultpagenumber);
     resetStudent();
 }
+
 //biện luận khỏi khoảng trống
 function validation(field) {
     return field != null && field.trim() != '';
 }
+
 //tìm ID lớn nhất
 function getLastestId() {
     let studentTemp = [...students];
@@ -103,7 +119,8 @@ function removeStudentById(studentId) {
         students.splice(findId, 1);
         // console.log(findId);
         setData(key_data, students);
-        renderStudents(students);
+        renderStudents(students,defaultpagenumber);
+        renderPagination(pagesize,defaultpagenumber);
     }
 }
 // edit chỉnh sửa thông tin học viên
@@ -166,15 +183,18 @@ function updateStudent(stdId) {
     resetRow(stdId);
 }
 // tìm kiếm học viên 
-function search() {
+function search(pagenumber) {
 
-    let keywork = document.getElementById('keyword').value;
-    let result = students.filter(function (student, index) {
-        return student.studentName.toLowerCase().indexOf(keywork.toLowerCase()) != -1;
-    })
-    // console.log(result);
-    // 2 student
-    renderStudents(result);
+    let keyword = document.getElementById('keyword').value;
+    
+    let result = students.filter(e => { return find(e.studentName, keyword) });
+    renderStudents(result, pagenumber);
+    renderPagination(result,pagenumber);
+   
+}
+//tìm kiếm
+function find(str, kw) {
+    return str.toLowerCase().indexOf(kw.toLowerCase()) != -1;
 }
 // tạo vùng nhớ localStorage
 function init() {
@@ -201,10 +221,18 @@ function setData(key, data) {
 }
 
 
+function paging(pagenumber){
+    currentpage = pagenumber;
+    renderPagination(pagesize, pagenumber)
+    renderStudents(students, pagenumber);
+}
+
 //khởi tạo
 function ready() {
     init();
-    renderStudents(students);
+    renderStudents(students,defaultpagenumber);
+    // renderStudents(students, pagenumber);
+    renderPagination(pagesize,defaultpagenumber);
 }
 
 ready();
