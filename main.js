@@ -51,13 +51,24 @@ function renderStudents(data, pagenumber) {
 
 //render phân trang
 function renderPagination(pagazise, pagenumber) {
-    let totalpage = Math.ceil(students.length / pagazise);
+    let totalpage = Math.ceil(students.length / pagesize);
     let pagination = document.querySelector(".pagination>ul");
     pagination.innerHTML = "";
     for (let i = 1; i <= totalpage; i++) {
         pagination.innerHTML += `<li class="page-item ${pagenumber == i ? 'active' : ''}"><button onclick='paging(${i})'>${i}</button></li>`
     }
 }
+// function renderPagination(page_size, page_number){
+//     let total_page = Math.ceil(products.length/page_size)
+//     let pagination =document.querySelector(".pagination>ul");
+//     pagination.innerHTML = "";
+//     for(let i = 1; i <= total_page; i++){
+//         pagination.innerHTML += `<li class="page-item ${page_number==i ? 'active' : ''}"><button onclick='paging(${i})'>${i}</button></li>`
+//     }
+// }
+
+
+
 
 // thêm học viên
 
